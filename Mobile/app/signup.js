@@ -85,7 +85,7 @@ export default function signup() {
             password: password,
           };
 
-          const response = await fetch(process.env.EXPO_PUBLIC_API_URL + "/ChatterHub/SignUp", {
+          const response = await fetch(process.env.EXPO_PUBLIC_API_URL + "/Server/SignUp", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

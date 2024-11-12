@@ -32,7 +32,7 @@ export default function App() {
   //   const ws = ;
   useEffect(() => {
     const getConnection = new WebSocket(
-      process.env.EXPO_PUBLIC_API_URL + "/ChatterHub/SocketLoadChat"
+      process.env.EXPO_PUBLIC_API_URL + "/Server/SocketLoadChat"
     );
     getConnection.onopen = () => {
       // connection opened

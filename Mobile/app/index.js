@@ -93,7 +93,7 @@ export default function App() {
             };
 
             const response = await fetch(
-              process.env.EXPO_PUBLIC_API_URL + "/ChatterHub/SignIn",
+              process.env.EXPO_PUBLIC_API_URL + "/Server/SignIn",
               {
                 method: "POST",
                 body: JSON.stringify(data),

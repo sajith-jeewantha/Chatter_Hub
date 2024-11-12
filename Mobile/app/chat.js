@@ -54,7 +54,7 @@ export default function home() {
     let auth = JSON.parse(userJson);
     let response = await fetch(
       process.env.EXPO_PUBLIC_API_URL +
-        "/ChatterHub/LoadChat?user_id=" +
+        "/Server/LoadChat?user_id=" +
         auth.user.id +
         "&other_user_id=" +
         chat_user.user_id
@@ -68,7 +68,7 @@ export default function home() {
 
   async function deleteMessage(id) {
     const response = await fetch(
-      process.env.EXPO_PUBLIC_API_URL + "/ChatterHub/DeleteChat?id=" + id
+      process.env.EXPO_PUBLIC_API_URL + "/Server/DeleteChat?id=" + id
     );
     if (response.ok) {
       deleteSound();
@@ -141,7 +141,7 @@ export default function home() {
                 <Image
                   source={
                     process.env.EXPO_PUBLIC_API_URL +
-                    "/ChatterHub/AvatarImages/" +
+                    "/Server/AvatarImages/" +
                     chat_user.user_mobile +
                     ".png"
                   }
@@ -227,7 +227,7 @@ export default function home() {
                 let auth = JSON.parse(authJson);
                 let response = await fetch(
                   process.env.EXPO_PUBLIC_API_URL +
-                    "/ChatterHub/SendChat?user_id=" +
+                    "/Server/SendChat?user_id=" +
                     auth.user.id +
                     "&other_user_id=" +
                     chat_user.user_id +

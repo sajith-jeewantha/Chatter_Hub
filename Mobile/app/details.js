@@ -39,7 +39,7 @@ export default function details() {
           setFirstname(auth.user.first_name);
           setLastname(auth.user.last_name);
           if (auth.user_image) {
-            setImage(process.env.EXPO_PUBLIC_API_URL+"/ChatterHub/AvatarImages/"+ auth.user.mobile + ".png");
+            setImage(process.env.EXPO_PUBLIC_API_URL+"/Server/AvatarImages/"+ auth.user.mobile + ".png");
           }
 
         }
@@ -117,7 +117,7 @@ export default function details() {
                 uri: getImage,
               });
             }
-            const response = await fetch(process.env.EXPO_PUBLIC_API_URL + "/ChatterHub/UpdateProfile", {
+            const response = await fetch(process.env.EXPO_PUBLIC_API_URL + "/Server/UpdateProfile", {
               method: "POST",
               body: formdata,
             });

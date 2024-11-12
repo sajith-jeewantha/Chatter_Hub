@@ -74,7 +74,7 @@ export default function prifile() {
             <Image
               source={
                 process.env.EXPO_PUBLIC_API_URL +
-                "/ChatterHub/AvatarImages/" +
+                "/Server/AvatarImages/" +
                 getMobile +
                 ".png"
               }
