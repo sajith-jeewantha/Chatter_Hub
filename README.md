@@ -29,4 +29,4 @@ Welcome to the React Native Expo Chat Application! This project is a feature-ric
 
 <img alt="image1" src="./github/image1.PNG" width="30%">&nbsp;<img alt="image2" src="./github/image2.PNG" width="30%">&nbsp;
 <img alt="image3" src="./github/image3.PNG" width="30%">&nbsp;<img alt="image4" src="./github/image4.PNG" width="30%">&nbsp;
-<img alt="image5" src="./github/image3.PNG" width="30%">&nbsp;<img alt="image6" src="./github/image4.PNG" width="30%">&nbsp;
+<img alt="image5" src="./github/image5.PNG" width="30%">&nbsp;<img alt="image6" src="./github/image6.PNG" width="30%">&nbsp;
