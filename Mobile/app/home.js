@@ -50,7 +50,11 @@ export default function home() {
       let auth = JSON.parse(userJson);
       // console.log(text)
       let response = await fetch(
-        process.env.EXPO_PUBLIC_API_URL + "/Server/LoadHomeData?id=" + auth.user.id + "&search=" + text
+        process.env.EXPO_PUBLIC_API_URL +
+          "/Server/LoadHomeData?id=" +
+          auth.user.id +
+          "&search=" +
+          text
       );
 
       if (response.ok) {
@@ -112,8 +116,14 @@ export default function home() {
             <View style={styles.avatar}>
               {item.user_image ? (
                 <Image
-                  source={process.env.EXPO_PUBLIC_API_URL+"/Server/AvatarImages/" + item.user_mobile + ".png"}
+                  source={
+                    process.env.EXPO_PUBLIC_API_URL +
+                    "/Server/AvatarImages/" +
+                    item.user_mobile +
+                    ".png"
+                  }
                   style={styles.avatar}
+                  cachePolicy="none"
                 />
               ) : (
                 <Text style={styles.avatartext}>{item.avatar_letter}</Text>
@@ -221,7 +231,7 @@ const styles = StyleSheet.create({
   },
   avatartext: {
     fontSize: 20,
-    fontFamily:"Roboto-Black",
+    fontFamily: "Roboto-Black",
     alignSelf: "center",
     justifyContent: "center",
     textTransform: "uppercase",

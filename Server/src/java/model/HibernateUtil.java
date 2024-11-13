@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
  * @author sajithjeewantha
  */
 public class HibernateUtil {
-    
+
     private static final SessionFactory sessionFactory;
 
     static {
@@ -23,7 +23,8 @@ public class HibernateUtil {
             throw new ExceptionInInitializerError(ex);
         }
     }
-
+    
+    
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
@@ -31,5 +32,5 @@ public class HibernateUtil {
     public static void shutdown() {
         getSessionFactory().close();
     }
-    
+
 }

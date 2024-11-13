@@ -35,7 +35,7 @@ public class DeleteChat extends HttpServlet {
         Chat chat = (Chat) openSession.get(Chat.class, Integer.parseInt(id));
 
         if (chat != null) {
-            System.out.println(chat.getMessage());
+//            System.out.println(chat.getMessage());
             
             openSession.delete(chat);
             openSession.beginTransaction().commit();

@@ -62,7 +62,7 @@ public class Validation {
     public static boolean isInteger(String text) {
         return text.matches("^\\d+$");
     }
-    
+
     /**
      * Returns true or false
      *

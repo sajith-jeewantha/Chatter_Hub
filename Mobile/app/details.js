@@ -22,14 +22,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as ImagePicker from "expo-image-picker";
 
 export default function details() {
-  const addimage = require("../assets/images/image1.png");
+  const addimage = require("../assets/images/image3.png");
   const [getImage, setImage] = useState(addimage);
   const [id, setId] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
 
   useEffect(() => {
-    
     async function checkuser() {
       try {
         let authJson = await AsyncStorage.getItem("auth");
@@ -39,9 +38,13 @@ export default function details() {
           setFirstname(auth.user.first_name);
           setLastname(auth.user.last_name);
           if (auth.user_image) {
-            setImage(process.env.EXPO_PUBLIC_API_URL+"/Server/AvatarImages/"+ auth.user.mobile + ".png");
+            setImage(
+              process.env.EXPO_PUBLIC_API_URL +
+                "/Server/AvatarImages/" +
+                auth.user.mobile +
+                ".png"
+            );
           }
-
         }
       } catch (error) {
         console.log(error);
@@ -80,6 +83,7 @@ export default function details() {
             style={styles.addimage}
             source={getImage}
             contentFit="contain"
+            cachePolicy="none"
           />
         </Pressable>
         <Text style={styles.textPicture}>Profile Picture</Text>
@@ -117,10 +121,13 @@ export default function details() {
                 uri: getImage,
               });
             }
-            const response = await fetch(process.env.EXPO_PUBLIC_API_URL + "/Server/UpdateProfile", {
-              method: "POST",
-              body: formdata,
-            });
+            const response = await fetch(
+              process.env.EXPO_PUBLIC_API_URL + "/Server/UpdateProfile",
+              {
+                method: "POST",
+                body: formdata,
+              }
+            );
 
             if (response.ok) {
               const json = await response.json();
@@ -296,8 +303,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    borderWidth:1,
-
+    borderWidth: 1,
   },
   textPicture: {
     alignSelf: "center",

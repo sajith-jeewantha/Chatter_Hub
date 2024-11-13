@@ -28,6 +28,7 @@ export default function prifile() {
   const [getAuth, setAuth] = useState({});
   const [getName, setName] = useState("");
   const [getMobile, setMobile] = useState("");
+  const [image, setImage] = useState("");
 
   const [loaded, error] = useFonts({
     "Roboto-Black": require("../assets/fonts/Roboto-Black.ttf"),
@@ -48,9 +49,15 @@ export default function prifile() {
           setAuth(auth);
           setName(auth.user.first_name + " " + auth.user.last_name);
           setMobile(auth.user.mobile);
+          setImage(
+            process.env.EXPO_PUBLIC_API_URL +
+              "/Server/AvatarImages/" +
+              auth.user.mobile +
+              ".png"
+          );
         }
       } catch (error) {
-        console.log(error);
+        console.error(error);
         router.replace("/");
       }
     }
@@ -72,13 +79,10 @@ export default function prifile() {
         <View style={getAuth.user_image ? null : styles.avatar}>
           {getAuth.user_image ? (
             <Image
-              source={
-                process.env.EXPO_PUBLIC_API_URL +
-                "/Server/AvatarImages/" +
-                getMobile +
-                ".png"
-              }
+              source={image}
               style={styles.avatar}
+              contentFit="contain"
+              cachePolicy="none"
             />
           ) : (
             <Text style={styles.avatartext}>{getAuth.avatar_letter}</Text>

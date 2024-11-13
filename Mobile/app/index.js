@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar hidden={true} />
+      {/* <StatusBar hidden={true} /> */}
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         keyboardVerticalOffset={60}

@@ -156,6 +156,7 @@ public class LoadHomeData extends HttpServlet {
             e.printStackTrace();
         }
 
+       
         response.setContentType("application/json");
         response.getWriter().write(gson.toJson(respJsonObject));
 

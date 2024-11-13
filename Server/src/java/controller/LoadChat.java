@@ -56,7 +56,7 @@ public class LoadChat extends HttpServlet {
                         Restrictions.and(Restrictions.eq("from_user", other_user), Restrictions.eq("to_user", logged_user))
                 )
         );
-        chatCriteria.addOrder(Order.asc("date"));
+        chatCriteria.addOrder(Order.desc("date"));
 
         List<Chat> list = chatCriteria.list();
 

@@ -146,6 +146,7 @@ export default function home() {
                     ".png"
                   }
                   style={styles.avatar}
+                  cachePolicy="none"
                 />
               ) : (
                 <Text style={styles.avatartext}>{chat_user.avatar_letter}</Text>
@@ -203,6 +204,7 @@ export default function home() {
           contentContainerStyle={styles.messagesContainer}
           estimatedItemSize={200}
           flashScrollIndicators={true}
+          inverted
         />
 
         <View style={styles.inputContainer}>
